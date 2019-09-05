@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Guess Game</title>
+    <link rel="stylesheet" href="/Users/annemariehin/bootcamp/unit-4-game/assets/css/style.css/style.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Crystal Collector!</h1>
+    </div>
+    <br>
+
+    <div class="para">
+        <p1>You will be given a random number at the start of the game</p1>
+        <br>
+        <p1>There are four crystals below. By clicking on a crystal, you will
+            add a specific amount of points to your total score.</p1>
+        <br>
+        <p1> You win the game by matching your score to the random number.
+            You lose if your score goes over the random number.</p1>
+        <br>
+        <p1>The value of each crystal is hidden until you click on it.</p1>
+        <br>
+        <p1>Each time the game starts, the game will change the value of each crystal.</p1>
+    </div>
+    <br>
+    <div class="score"> <h2> Winning number: <span id="winningNumber"></span></h2>
+    
+        <h2>Wins: <span id="winsText"></span></h2>
+        <br>
+        <h2>Losses: <span id="lossesText"></span></h2>
+    </div>
+    <div class=scoreboard>
+
+        <div id="wins-text"></div>
+        <div id="losses-text"></div>
+    </div>
+    <br>
+    <div class="photos"></div> <img src="/Users/annemariehin/bootcamp/unit-4-game/assets/images/red.png" alt="red"
+        id="red" height=100px width=100px>
+    <img src="/Users/annemariehin/bootcamp/unit-4-game/assets/images/green.png" alt="green" id="green" height=100px
+        width=100px>
+    <img src="/Users/annemariehin/bootcamp/unit-4-game/assets/images/purple.png" alt="purple" id="purple" height=100px
+        width=100px>
+    <img src="/Users/annemariehin/bootcamp/unit-4-game/assets/images/yellow.png" alt="yellow" id="yellow" height=100px
+        width=100px>
+    </div>
+    <div class="totalscore">
+        <h2>Your total score is: <span id="yourScore"></span></h2>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var computersNumber = Math.floor(Math.random() * 101 + 19)
+        console.log(computersNumber)
+        var wins = 0
+        var losses = 0
+        var usersScore = 0
+        var crystalOne = Math.floor(Math.random() * 11 + 1)
+        var crystalTwo = Math.floor(Math.random() * 11 + 1)
+        var crystalThree = Math.floor(Math.random() * 11 + 1)
+        var crystalFour = Math.floor(Math.random() * 11 + 1)
+        console.log(crystalOne)
+        console.log(crystalTwo)
+        console.log(crystalThree)
+        console.log(crystalFour)
+
+        console.log ($("#winningNumber"))
+        $("#winningNumber").text(computersNumber);
+        
+     
+        $("#red").on("click", function () {
+            usersScore = usersScore + crystalOne;
+            $("#yourScore").text(usersScore);
+            alert (usersScore);
+            console.log(usersScore)
+            console.log("winning num is"+computersNumber)
+            if (usersScore === computersNumber) {
+                wins++;
+                $("#winsText").text(wins);
+               
+
+                console.log(wins)
+                usersScore = 0
+                computersNumber = Math.floor(Math.random() * 101 + 19)
+                crystalOne = Math.floor(Math.random() * 11 + 1)
+                crystalTwo = Math.floor(Math.random() * 11 + 1)
+                crystalThree = Math.floor(Math.random() * 11 + 1)
+                crystalFour = Math.floor(Math.random() * 11 + 1)
+                $("#winningNumber").text(computersNumber);
+            }
+            else if (usersScore > computersNumber) {
+                losses++;
+                $("#lossesText").text(losses);
+              
+                console.log(losses)
+                usersScore = 0
+                computersNumber = Math.floor(Math.random() * 101 + 19)
+                crystalOne = Math.floor(Math.random() * 11 + 1)
+                crystalTwo = Math.floor(Math.random() * 11 + 1)
+                crystalThree = Math.floor(Math.random() * 11 + 1)
+                crystalFour = Math.floor(Math.random() * 11 + 1)
+                $("#winningNumber").text(computersNumber);
+            }
+
+
+        })
+
+        $("#green").on("click", function () {
+            usersScore = usersScore + crystalTwo;
+            $("#yourScore").text(usersScore);
+            alert (usersScore);
+            console.log(usersScore)
+
+            if (usersScore === computersNumber) {
+                wins++;
+                $("#winsText").text(wins);
+             
+              
+                console.log(wins)
+                usersScore = 0
+                computersNumber = Math.floor(Math.random() * 101 + 19)
+                crystalOne = Math.floor(Math.random() * 11 + 1)
+                crystalTwo = Math.floor(Math.random() * 11 + 1)
+                crystalThree = Math.floor(Math.random() * 11 + 1)
+                crystalFour = Math.floor(Math.random() * 11 + 1)
+                $("#winningNumber").text(computersNumber);
+            }
+            else if (usersScore > computersNumber) {
+                losses++;
+                $("#lossesText").text(losses);
+               
+                console.log(losses)
+                usersScore = 0
+                computersNumber = Math.floor(Math.random() * 101 + 19)
+                crystalOne = Math.floor(Math.random() * 11 + 1)
+                crystalTwo = Math.floor(Math.random() * 11 + 1)
+                crystalThree = Math.floor(Math.random() * 11 + 1)
+                crystalFour = Math.floor(Math.random() * 11 + 1)
+                $("#winningNumber").text(computersNumber);
+            }
+        })
+
+        $("#purple").on("click", function () {
+            usersScore = usersScore + crystalThree;
+            $("#yourScore").text(usersScore);
+            alert (usersScore);
+            console.log(usersScore)
+            if (usersScore === computersNumber) {
+                wins++;
+                $("#winsText").text(wins);
+               
+               
+                console.log(wins)
+                usersScore = 0
+                computersNumber = Math.floor(Math.random() * 101 + 19)
+                crystalOne = Math.floor(Math.random() * 11 + 1)
+                crystalTwo = Math.floor(Math.random() * 11 + 1)
+                crystalThree = Math.floor(Math.random() * 11 + 1)
+                crystalFour = Math.floor(Math.random() * 11 + 1)
+                $("#winningNumber").text(computersNumber);
+            }
+            else if (usersScore > computersNumber) {
+                losses++;
+                $("#lossesText").text(losses);
+                
+                alert (usersScore);
+                console.log(losses)
+                usersScore = 0
+                computersNumber = Math.floor(Math.random() * 101 + 19)
+                crystalOne = Math.floor(Math.random() * 11 + 1)
+                crystalTwo = Math.floor(Math.random() * 11 + 1)
+                crystalThree = Math.floor(Math.random() * 11 + 1)
+                crystalFour = Math.floor(Math.random() * 11 + 1)
+                $("#winningNumber").text(computersNumber);
+            }
+        })
+
+        $("#yellow").on("click", function () {
+            usersScore = usersScore + crystalFour;
+            $("#yourScore").text(usersScore);
+            console.log(usersScore)
+            if (usersScore === computersNumber) {
+                wins++;
+              
+                $("#winsText").text(wins);
+                
+                console.log(wins)
+                usersScore = 0
+                computersNumber = Math.floor(Math.random() * 101 + 19)
+                crystalOne = Math.floor(Math.random() * 11 + 1)
+                crystalTwo = Math.floor(Math.random() * 11 + 1)
+                crystalThree = Math.floor(Math.random() * 11 + 1)
+                crystalFour = Math.floor(Math.random() * 11 + 1)
+                $("#winningNumber").text(computersNumber);
+            }
+            else if (usersScore > computersNumber) {
+                losses++;
+                $("#lossesText").text(losses);
+               
+                console.log(computersNumber)
+                console.log(losses)
+                usersScore = 0
+                computersNumber = Math.floor(Math.random() * 101 + 19)
+                crystalOne = Math.floor(Math.random() * 11 + 1)
+                crystalTwo = Math.floor(Math.random() * 11 + 1)
+                crystalThree = Math.floor(Math.random() * 11 + 1)
+                crystalFour = Math.floor(Math.random() * 11 + 1)
+                $("#winningNumber").text(computersNumber);
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

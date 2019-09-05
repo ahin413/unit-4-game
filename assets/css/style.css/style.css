@@ -1,0 +1,42 @@
+body {
+    background: url("/Users/annemariehin/bootcamp/unit-4-game/assets/images/stonehaven.png");
+}
+
+.para {
+    background: #0c812f;
+    height: 500px;
+    width: 400px;
+    font-size: 22pt;
+    color: bisque;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom:10px;
+    text-align: center;
+
+}
+
+.heading {
+    height:80px;
+    width: 420px;
+    background-color: #b61c11;
+    text-align: center;
+    color: floralwhite;
+    padding-top: 3px;
+  
+}
+
+
+.score {
+    background-color: #700f60;
+     height: 250px;
+     width: 200px;
+     float: center;
+     padding-top: 2px;
+}
+
+.totalscore {
+    height: 30px,;
+    width: 200px;
+    background-color: #e2cc05;
+}
