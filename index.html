@@ -185,11 +185,14 @@
             usersScore = usersScore + crystalFour;
             $("#yourScore").text(usersScore);
             console.log(usersScore)
+            alert (usersScore);
+   
+                
             if (usersScore === computersNumber) {
                 wins++;
               
                 $("#winsText").text(wins);
-                
+               
                 console.log(wins)
                 usersScore = 0
                 computersNumber = Math.floor(Math.random() * 101 + 19)
